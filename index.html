@@ -274,18 +274,17 @@
         x.currentTarget.classList.remove('active')
         }
     }
-
-    let aTags = document.querySelectorAll('nav.manu > ul > li >a')
-    for(let i=0; i< aTags.length ; i++){
+    let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+    for(let i=0; i<aTags.length; i++){
       aTags[i].onclick = function(x){
         x.preventDefault()
         let a = x.currentTarget
-        let href = a.getAttribute('href')//输入的什么就是什么
+        let href = a.getAttribute('href') //'#siteAbout'
         let element = document.querySelector(href)
         let top = element.offsetTop
-        window.scrollTo(0,top-80)
-      }
-    }
+        window.scrollTo(0, top - 80)
+        }
+        }
 
       </script>
   </body>

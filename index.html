@@ -3,75 +3,7 @@
 
 <head>
   <title>个人简历</title>
-  <script src="//at.alicdn.com/t/font_451045_32zbfqegtq3t0529.js"></script>
-
-  <style type="text/css">
-    .loading {
-      width: 200px;
-      height: 200px;
-      position: relative;
-    }
-
-    .loading::before,
-    .loading::after {
-      content: '';
-      position: absolute;
-      width: 0px;
-      height: 0px;
-      background: black;
-      border-radius: 50%;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      margin: auto;
-      animation: s 1.5s linear infinite;
-    }
-
-    .loading::after {
-      animation-delay: 0.75s;
-    }
-
-    @keyframes s {
-      0% {
-        width: 0px;
-        height: 0px;
-        opacity: 1;
-      }
-
-      100% {
-        width: 100px;
-        height: 100px;
-        opacity: 0;
-      }
-    }
-
-    .icon {
-      width: 1em;
-      height: 1em;
-      vertical-align: -0.15em;
-      fill: currentColor;
-      overflow: hidden;
-    }
-
-    .site-welcome {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #888;
-      z-index: 1;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .site-welcome.active {
-      display: flex;
-    }
-  </style>
-
+  <script src="//at.alicdn.com/t/font_889019_c7wc0w6pt3h.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.css">
   <link rel="stylesheet" href="./a.css">
 </head>
@@ -156,12 +88,17 @@
         </a>
         <a href="#">
           <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-Ankerwebicon-"></use>
+            <use xlink:href="#icon-qq"></use>
           </svg>
         </a>
         <a href="#">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-weibo"></use>
+          </svg>
+        </a>
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-jirengulogojichu1"></use>
           </svg>
         </a>
       </footer>
@@ -248,25 +185,11 @@
 
 
   </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
-  <script>
-    var mySwiper = new Swiper('.swiper-container', {
-      loop: true, // 循环模式选项
-
-      // 如果需要分页器
-      pagination: {
-        el: '.swiper-pagination',
-      },
-
-      // 如果需要前进后退按钮
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    })        
-  </script>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+<script src="./js/init-swiper.js"></script>
+
 <script>
   // 添加 offset 类
   let specialTags = document.querySelectorAll('[data-x]')

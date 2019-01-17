@@ -1,22 +1,78 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
   <title>个人简历</title>
   <script src="//at.alicdn.com/t/font_451045_32zbfqegtq3t0529.js"></script>
+
   <style type="text/css">
-    .loading{ width: 200px; height: 200px; position: relative; }
-    .loading::before,.loading::after{ content: ''; position: absolute; width: 0px; height: 0px; background: black; border-radius: 50%; top: 0; left: 0; bottom: 0; right: 0; margin: auto; animation: s 1.5s linear infinite; }
-    .loading::after{ animation-delay: 0.75s; }
-    @keyframes s{ 
-      0%{ width: 0px; height: 0px; opacity: 1; }
-      100%{ width: 100px; height: 100px; opacity: 0; }
+    .loading {
+      width: 200px;
+      height: 200px;
+      position: relative;
     }
-    .icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
-    .site-welcome{ display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #888; z-index: 1; justify-content: center; align-items: center; }
-    .site-welcome.active{ display: flex; }
+
+    .loading::before,
+    .loading::after {
+      content: '';
+      position: absolute;
+      width: 0px;
+      height: 0px;
+      background: black;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      animation: s 1.5s linear infinite;
+    }
+
+    .loading::after {
+      animation-delay: 0.75s;
+    }
+
+    @keyframes s {
+      0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+      }
+
+      100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+      }
+    }
+
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
+    .site-welcome {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #888;
+      z-index: 1;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .site-welcome.active {
+      display: flex;
+    }
   </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.css">
   <link rel="stylesheet" href="./a.css">
 </head>
 
@@ -114,7 +170,6 @@
     <p class="downloadResume-wrapper">
       <a class="downloadResume" href="./resume.pdf" target="_blank" download>下载 PDF 简历</a>
     </p>
-
     <p class="selfIntroduction">
       肖伊， 前端工程师，现在在 饥人谷 学习前端课程。
       <br> 技能：前端开发，Rails 开发，Node.js 开发
@@ -161,7 +216,7 @@
           React.js
         </h3>
         <div class="progressBar">
-          <div class="progress"  style="width: 50%"></div>
+          <div class="progress" style="width: 50%"></div>
         </div>
       </li>
       <li>
@@ -169,123 +224,122 @@
           Node.js
         </h3>
         <div class="progressBar">
-          <div class="progress"  style="width: 60%"></div>
+          <div class="progress" style="width: 60%"></div>
         </div>
       </li>
     </ol>
   </section>
   <section data-x class="portfolio" id="siteWorks">
     <h2>作品集</h2>
-    <nav>
-      <ol class="clearfix">
-        <li id="portfolio1">所有</li>
-        <li id="portfolio2">框架</li>
-        <li id="portfolio3">原生JS&amp;CSS</li>
-      </ol>
-      <div id="portfolioBar" class="bar state-1">
-        <div class="bar-inner"></div>
+    <div class="swiper box">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <img src="./img/img1.jpg" class="swiper-slide">
+          <img src="./img/img2.jpg" class="swiper-slide">
+          <img src="./img/img3.jpg" class="swiper-slide">
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
       </div>
-    </nav>
-    <script>
-      portfolio1.onclick= function(){
-        portfolioBar.className = 'bar state-1'
-      }
-      portfolio2.onclick= function(){
-        portfolioBar.className = 'bar state-2'
-      }
-      portfolio3.onclick= function(){
-        portfolioBar.className = 'bar state-3'
-      }
-    </script>
-
-
-    <div class="works" style="height: 597px;">
-      <div class="big" style="top: 0; left: 0;">
-        <img src="./img/1.jpg" alt="作品1">
-      </div>
-      <div class="small" style="top: 0; left: 645px;">
-        <img src="./img/2.jpg" alt="作品2">
-      </div>
-      <div class="small" style="top: 312px; left: 645px;">
-        <img src="./img/3.jpg" alt="作品3">
-      </div>
+      <!-- 如果需要导航按钮 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
+
 
   </section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
   <script>
-// 添加 offset 类
-let specialTags = document.querySelectorAll('[data-x]')
-for(let i =0;i<specialTags.length; i++){
-  specialTags[i].classList.add('offset')
-}
-findClosest()
-window.onscroll = function(x){
-  if(window.scrollY > 0){
-    topNavBar.classList.add('sticky')
-  }else{
-    topNavBar.classList.remove('sticky')
+    var mySwiper = new Swiper('.swiper-container', {
+      loop: true, // 循环模式选项
+
+      // 如果需要分页器
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // 如果需要前进后退按钮
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    })        
+  </script>
+</body>
+<script>
+  // 添加 offset 类
+  let specialTags = document.querySelectorAll('[data-x]')
+  for (let i = 0; i < specialTags.length; i++) {
+    specialTags[i].classList.add('offset')
   }
   findClosest()
-}
-function findClosest(){
-  let specialTags = document.querySelectorAll('[data-x]')
-  let minIndex = 0
-  for(let i =1;i<specialTags.length; i++){
-    if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
-      minIndex = i
+  window.onscroll = function (x) {
+    if (window.scrollY > 0) {
+      topNavBar.classList.add('sticky')
+    } else {
+      topNavBar.classList.remove('sticky')
+    }
+    findClosest()
+  }
+  function findClosest() {
+    let specialTags = document.querySelectorAll('[data-x]')
+    let minIndex = 0
+    for (let i = 1; i < specialTags.length; i++) {
+      if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+        minIndex = i
+      }
+    }
+    // minIndex 就是里窗口顶部最近的元素
+    specialTags[minIndex].classList.remove('offset')
+    let id = specialTags[minIndex].id
+    let a = document.querySelector('a[href="#' + id + '"]')
+    let li = a.parentNode
+    let brothersAndMe = li.parentNode.children
+    for (let i = 0; i < brothersAndMe.length; i++) {
+      brothersAndMe[i].classList.remove('highlight')
+    }
+    li.classList.add('highlight')
+  }
+  let liTags = document.querySelectorAll('nav.menu > ul > li')
+  for (let i = 0; i < liTags.length; i++) {
+    liTags[i].onmouseenter = function (x) {
+      x.currentTarget.classList.add('active')
+    }
+    liTags[i].onmouseleave = function (x) {
+      x.currentTarget.classList.remove('active')
     }
   }
-  // minIndex 就是里窗口顶部最近的元素
-  specialTags[minIndex].classList.remove('offset')
-  let id = specialTags[minIndex].id
-  let a = document.querySelector('a[href="#'+ id + '"]')
-  let li = a.parentNode
-  let brothersAndMe = li.parentNode.children
-  for(let i=0; i<brothersAndMe.length; i++){
-    brothersAndMe[i].classList.remove('highlight')
+  let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+  function animate(time) {
+    requestAnimationFrame(animate);
+    TWEEN.update(time);
   }
-  li.classList.add('highlight')
-}
-let liTags = document.querySelectorAll('nav.menu > ul > li')
-for(let i=0; i<liTags.length; i++){
-  liTags[i].onmouseenter = function(x){
-    x.currentTarget.classList.add('active')
-  }
-  liTags[i].onmouseleave = function(x){
-    x.currentTarget.classList.remove('active')
-  }
-}
-let aTags = document.querySelectorAll('nav.menu > ul > li > a')
-function animate(time) {
   requestAnimationFrame(animate);
-  TWEEN.update(time);
-}
-requestAnimationFrame(animate);
-for(let i=0; i<aTags.length; i++){
-  aTags[i].onclick = function(x){
-    x.preventDefault()
-    let a = x.currentTarget
-    let href = a.getAttribute('href') //'#siteAbout'
-    let element = document.querySelector(href)
-    let top = element.offsetTop
-    let currentTop = window.scrollY
-    let targetTop = top - 80
-    let s = targetTop - currentTop
-    var coords = { y: currentTop};
-    var t = Math.abs((s/100)*300) 
-    if(t>500){ t = 500 }
-    var tween = new TWEEN.Tween(coords) 
-      .to({ y: targetTop}, t) // 
-      .easing(TWEEN.Easing.Cubic.InOut) 
-      .onUpdate(function() {
-        
-        window.scrollTo(0,coords.y) 
-      })
-      .start(); // 开始缓动
+  for (let i = 0; i < aTags.length; i++) {
+    aTags[i].onclick = function (x) {
+      x.preventDefault()
+      let a = x.currentTarget
+      let href = a.getAttribute('href') //'#siteAbout'
+      let element = document.querySelector(href)
+      let top = element.offsetTop
+      let currentTop = window.scrollY
+      let targetTop = top - 80
+      let s = targetTop - currentTop
+      var coords = { y: currentTop };
+      var t = Math.abs((s / 100) * 300)
+      if (t > 500) { t = 500 }
+      var tween = new TWEEN.Tween(coords)
+        .to({ y: targetTop }, t) // 
+        .easing(TWEEN.Easing.Cubic.InOut)
+        .onUpdate(function () {
+
+          window.scrollTo(0, coords.y)
+        })
+        .start(); // 开始缓动
     }
-}
-  </script>
+  }
+</script>
 </body>
 
 </html>

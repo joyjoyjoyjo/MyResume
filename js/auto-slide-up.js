@@ -1,6 +1,6 @@
 !function () {
     // 添加 offset 类
-    let specialTags = document.querySelectorAll('[data-x]')
+    var specialTags = document.querySelectorAll('[data-x]')
     for (let i = 0; i < specialTags.length; i++) {
         specialTags[i].classList.add('offset')
     }
@@ -10,6 +10,7 @@
     })
 
 
+    /* helper */
     function findClosestAndRemoveOffset() {
         let specialTags = document.querySelectorAll('[data-x]')
         let minIndex = 0

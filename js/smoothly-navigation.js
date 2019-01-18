@@ -1,4 +1,5 @@
 !function(){
+    var view = document.querySelector('nav.menu')
     let aTags = document.querySelectorAll('nav.menu > ul > li > a')
     function animate(time) {
         requestAnimationFrame(animate);
